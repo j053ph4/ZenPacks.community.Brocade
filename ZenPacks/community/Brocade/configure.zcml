@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:zcml="http://namespaces.zope.org/zcml">
+        <configure zcml:condition="installed Products.Zuul">
+
+            <include package="Products.ZenUtils.extdirect.zope" file="meta.zcml"/>
+
+
+            <!-- ZenPack Info -->
+
+            <browser:directRouter
+                name="Brocade_router"
+                for="*"
+                class="ZenPacks.community.Brocade.routers.BrocadeRouter"
+                namespace="Zenoss.remote"
+                permission="zenoss.View"
+            />
+    
+            <adapter
+                name="BrocadeAdapter"
+                provides="ZenPacks.community.Brocade.interfaces.IBrocadeFacade"
+                for="*"
+                factory="ZenPacks.community.Brocade.facades.BrocadeFacade"
+            />
+                
+            <browser:resourceDirectory
+                    name="Brocade"
+                    directory="resources"
+            />
+
+            <!-- Component Info -->
+            <adapter factory="ZenPacks.community.Brocade.info.connUnitInfo"
+                for="ZenPacks.community.Brocade.connUnit.connUnit"
+                provides="ZenPacks.community.Brocade.interfaces.IconnUnitInfo"
+            />
+    
+            <browser:viewlet
+                name="js-connUnit"
+                paths="/++resource++Brocade/connunit.js"
+                weight="10"
+                manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+                class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+                permission="zope2.Public"
+            />
+
+            <utility provides="zope.schema.interfaces.IVocabularyFactory"
+                component=".info.connUnitgetEventClassesVocabulary"
+                name="connUnitgetEventClasses"
+            />
+
+            <!-- Component Info -->
+            <adapter factory="ZenPacks.community.Brocade.info.swFCportInfo"
+                for="ZenPacks.community.Brocade.swFCport.swFCport"
+                provides="ZenPacks.community.Brocade.interfaces.IswFCportInfo"
+            />
+    
+            <browser:viewlet
+                name="js-swFCport"
+                paths="/++resource++Brocade/swfcport.js"
+                weight="10"
+                manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+                class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+                permission="zope2.Public"
+            />
+
+            <utility provides="zope.schema.interfaces.IVocabularyFactory"
+                component=".info.swFCportgetEventClassesVocabulary"
+                name="swFCportgetEventClasses"
+            />
+
+            <!-- Component Info -->
+            <adapter factory="ZenPacks.community.Brocade.info.swFanSensorInfo"
+                for="ZenPacks.community.Brocade.swFanSensor.swFanSensor"
+                provides="ZenPacks.community.Brocade.interfaces.IswFanSensorInfo"
+            />
+    
+            <browser:viewlet
+                name="js-swFanSensor"
+                paths="/++resource++Brocade/swfansensor.js"
+                weight="10"
+                manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+                class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+                permission="zope2.Public"
+            />
+
+            <utility provides="zope.schema.interfaces.IVocabularyFactory"
+                component=".info.swFanSensorgetEventClassesVocabulary"
+                name="swFanSensorgetEventClasses"
+            />
+
+            <!-- Component Info -->
+            <adapter factory="ZenPacks.community.Brocade.info.swTempSensorInfo"
+                for="ZenPacks.community.Brocade.swTempSensor.swTempSensor"
+                provides="ZenPacks.community.Brocade.interfaces.IswTempSensorInfo"
+            />
+    
+            <browser:viewlet
+                name="js-swTempSensor"
+                paths="/++resource++Brocade/swtempsensor.js"
+                weight="10"
+                manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+                class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+                permission="zope2.Public"
+            />
+
+            <utility provides="zope.schema.interfaces.IVocabularyFactory"
+                component=".info.swTempSensorgetEventClassesVocabulary"
+                name="swTempSensorgetEventClasses"
+            />
+
+            <!-- Component Info -->
+            <adapter factory="ZenPacks.community.Brocade.info.connUnitLinkInfo"
+                for="ZenPacks.community.Brocade.connUnitLink.connUnitLink"
+                provides="ZenPacks.community.Brocade.interfaces.IconnUnitLinkInfo"
+            />
+    
+            <browser:viewlet
+                name="js-connUnitLink"
+                paths="/++resource++Brocade/connunitlink.js"
+                weight="10"
+                manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+                class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+                permission="zope2.Public"
+            />
+
+            <utility provides="zope.schema.interfaces.IVocabularyFactory"
+                component=".info.connUnitLinkgetEventClassesVocabulary"
+                name="connUnitLinkgetEventClasses"
+            />
+
+            <!-- Component Info -->
+            <adapter factory="ZenPacks.community.Brocade.info.swPowerSensorInfo"
+                for="ZenPacks.community.Brocade.swPowerSensor.swPowerSensor"
+                provides="ZenPacks.community.Brocade.interfaces.IswPowerSensorInfo"
+            />
+    
+            <browser:viewlet
+                name="js-swPowerSensor"
+                paths="/++resource++Brocade/swpowersensor.js"
+                weight="10"
+                manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+                class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+                permission="zope2.Public"
+            />
+
+            <utility provides="zope.schema.interfaces.IVocabularyFactory"
+                component=".info.swPowerSensorgetEventClassesVocabulary"
+                name="swPowerSensorgetEventClasses"
+            />
+
+            <!-- Component Info -->
+            <adapter factory="ZenPacks.community.Brocade.info.connUnitPortInfo"
+                for="ZenPacks.community.Brocade.connUnitPort.connUnitPort"
+                provides="ZenPacks.community.Brocade.interfaces.IconnUnitPortInfo"
+            />
+    
+            <browser:viewlet
+                name="js-connUnitPort"
+                paths="/++resource++Brocade/connunitport.js"
+                weight="10"
+                manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+                class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+                permission="zope2.Public"
+            />
+
+            <utility provides="zope.schema.interfaces.IVocabularyFactory"
+                component=".info.connUnitPortgetEventClassesVocabulary"
+                name="connUnitPortgetEventClasses"
+            />
+
+        </configure>
+    </configure>
+
