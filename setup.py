@@ -3,12 +3,12 @@
 # or saved.  Do not modify them directly here.
 # NB: PACKAGES is deprecated
 NAME = "ZenPacks.community.Brocade"
-VERSION = "1.0"
+VERSION = "1.1"
 AUTHOR = "Joseph Anderson"
 LICENSE = "GPLv2+"
 NAMESPACE_PACKAGES = ['ZenPacks', 'ZenPacks.community']
 PACKAGES = ['ZenPacks', 'ZenPacks.community', 'ZenPacks.community.Brocade']
-INSTALL_REQUIRES = ['ZenPacks.community.ConstructionKit']
+INSTALL_REQUIRES = ['ZenPacks.community.FCMGMT', 'ZenPacks.community.ConstructionKit']
 COMPAT_ZENOSS_VERS = ">=4.0"
 PREV_ZENPACK_NAME = ""
 # STOP_REPLACEMENTS

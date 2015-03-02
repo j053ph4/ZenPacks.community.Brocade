@@ -9,12 +9,12 @@
                 var menuButton = Ext.getCmp('component-add-menu');
                 menuButton.menuItems.push({
                     xtype: 'menuitem',
-                    text: _t('Add Power Supply Sensor') + '...',
+                    text: _t('Add Temp Sensor') + '...',
                     hidden: Zenoss.Security.doesNotHavePermission('Manage Device'),
                     handler: function() {
                         var win = new Zenoss.dialog.CloseDialog({
                             width: 300,
-                            title: _t('Add Power Supply Sensor'),
+                            title: _t('Add Temp Sensor'),
                             items: [{
                                 xtype: 'form',
                                 buttonAlign: 'left',
@@ -37,7 +37,7 @@
                                         function(response) {
                                             if (response.success) {
                                                 new Zenoss.dialog.SimpleMessageDialog({
-                                                    title: _t('Power Supply Sensor Added'),
+                                                    title: _t('Temp Sensor Added'),
                                                     message: response.msg,
                                                     buttons: [{
                                                         xtype: 'DialogButton',

@@ -9,7 +9,11 @@
             return ob;
         }
     }
-
+    
+    function pass_link(ob){ 
+        return ob; 
+    }
+    
     ZC.swFCportPanel = Ext.extend(ZC.ComponentGridPanel, {
         constructor: function(config) {
             config = Ext.applyIf(config||{}, {
@@ -80,51 +84,58 @@
                         "dataIndex": "name"
                     }, 
                     {
-                        "header": "A", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "A", 
+                        "renderer": "pass_link", 
                         "id": "getswFCPortAdmStatus", 
                         "dataIndex": "getswFCPortAdmStatus"
                     }, 
                     {
-                        "header": "Link State", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "Link State", 
+                        "renderer": "pass_link", 
                         "id": "getswFCPortLinkState", 
                         "dataIndex": "getswFCPortLinkState"
                     }, 
                     {
-                        "header": "O", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "O", 
+                        "renderer": "pass_link", 
                         "id": "getswFCPortOpStatus", 
                         "dataIndex": "getswFCPortOpStatus"
                     }, 
                     {
-                        "header": "Phys State", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "Phys State", 
+                        "renderer": "pass_link", 
                         "id": "getswFCPortPhyState", 
                         "dataIndex": "getswFCPortPhyState"
                     }, 
                     {
-                        "header": "swFCPortBrcdType", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "swFCPortBrcdType", 
+                        "renderer": "pass_link", 
                         "id": "swFCPortBrcdType", 
                         "dataIndex": "swFCPortBrcdType"
                     }, 
                     {
-                        "header": "swFCPortSpecifier", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "swFCPortSpecifier", 
+                        "renderer": "pass_link", 
                         "id": "swFCPortSpecifier", 
                         "dataIndex": "swFCPortSpecifier"
                     }, 
                     {
-                        "header": "swFCPortType", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "swFCPortType", 
+                        "renderer": "pass_link", 
                         "id": "swFCPortType", 
                         "dataIndex": "swFCPortType"
                     }, 

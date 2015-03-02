@@ -2,6 +2,13 @@ from Products.DataCollector.plugins.CollectorPlugin import SnmpPlugin, GetMap, G
 from Products.DataCollector.plugins.DataMaps import ObjectMap
 from ZenPacks.community.Brocade.Definition import *
 
+
+__doc__ = """swTempSensorMap
+
+swTempSensorMap detects Brocade Temperature Sensors.
+
+"""
+
 sensorTypeMap = {'temperature': 1, 'fan': 2, 'power-supply': 3}
 
 class swTempSensorMap(SnmpPlugin):

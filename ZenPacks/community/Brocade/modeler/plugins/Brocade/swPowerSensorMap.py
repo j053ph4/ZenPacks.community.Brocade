@@ -2,6 +2,13 @@ from Products.DataCollector.plugins.CollectorPlugin import SnmpPlugin, GetMap, G
 from Products.DataCollector.plugins.DataMaps import ObjectMap
 from ZenPacks.community.Brocade.Definition import *
 
+
+__doc__ = """swPowerSensorMap
+
+swPowerSensorMap detects Brocade Power Sensors.
+
+"""
+
 sensorTypeMap = {'temperature': 1, 'fan': 2, 'power-supply': 3}
 
 class swPowerSensorMap(SnmpPlugin):
@@ -35,6 +42,7 @@ class swPowerSensorMap(SnmpPlugin):
         trunktable = tabledata.get(self.snmpEntryName)
         snmpindex = 1
         for trunk in trunktable.values():
+            print trunk
             if trunk['swSensorType'] == sensorTypeMap['power-supply']:  
                 om = self.objectMap(trunk)
                 name = "%s" % getattr(om, self.snmpTitleName)
@@ -42,7 +50,6 @@ class swPowerSensorMap(SnmpPlugin):
                 om.title = name
                 om.snmpindex = getattr(om, self.snmpIndexName)
                 rm.append(om)
-		print om
         maps.append(rm)
         return maps
 

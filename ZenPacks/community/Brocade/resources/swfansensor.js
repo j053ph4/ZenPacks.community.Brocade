@@ -9,7 +9,11 @@
             return ob;
         }
     }
-
+    
+    function pass_link(ob){ 
+        return ob; 
+    }
+    
     ZC.swFanSensorPanel = Ext.extend(ZC.ComponentGridPanel, {
         constructor: function(config) {
             config = Ext.applyIf(config||{}, {
@@ -62,9 +66,10 @@
                         "dataIndex": "name"
                     }, 
                     {
-                        "header": "Sensor State", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "Sensor State", 
+                        "renderer": "pass_link", 
                         "id": "getSensorState", 
                         "dataIndex": "getSensorState"
                     }, 
@@ -91,7 +96,7 @@
     });
     
     Ext.reg('swFanSensorPanel', ZC.swFanSensorPanel);
-    ZC.registerName('swFanSensor', _t('Power Supply Sensor'), _t('Power Supply Sensors'));
+    ZC.registerName('swFanSensor', _t('Fan Sensor'), _t('Fan Sensors'));
     
     })();
 

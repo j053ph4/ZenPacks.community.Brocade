@@ -2,6 +2,13 @@ from Products.DataCollector.plugins.CollectorPlugin import SnmpPlugin, GetMap, G
 from Products.DataCollector.plugins.DataMaps import ObjectMap
 from ZenPacks.community.Brocade.Definition import *
 
+__doc__ = """swFCportMap
+
+swFCportMap detects Brocade Fiber Channel Ports.
+
+"""
+
+
 swFCPortTypeMap = {1: 'stitch', 2: 'flannel', 7: 'other'}
 swFCPortBrcdTypeMap = { 1: 'unknown', 2: 'other', 3: 'fl-port', 4: 'f-port', 5: 'e-port', 6:'g-port', 7: 'ex-port'}
 swFCPortOpStatusMap = { 0: 'unknown', 1: 'online', 2: 'offline', 3: 'testing', 4:'faulty'}
