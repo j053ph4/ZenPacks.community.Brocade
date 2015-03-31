@@ -5,7 +5,7 @@
 NAME = "ZenPacks.community.Brocade"
 VERSION = "1.1"
 AUTHOR = "Joseph Anderson"
-LICENSE = "GPLv2+"
+LICENSE = "Apache"
 NAMESPACE_PACKAGES = ['ZenPacks', 'ZenPacks.community']
 PACKAGES = ['ZenPacks', 'ZenPacks.community', 'ZenPacks.community.Brocade']
 INSTALL_REQUIRES = ['ZenPacks.community.FCMGMT', 'ZenPacks.community.ConstructionKit']
